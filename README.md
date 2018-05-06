@@ -1,5 +1,33 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
+
+[Based on Andrew's article](https://www.linkedin.com/pulse/getting-started-react-local-development-sharepoint-andrew-koltyakov/)
+
+`create-react-app --scripts-version=react-scripts-ts sharepoint-react-webpart && cd sharepoint-react-webpart`
+
+
+```json
+  "scripts": {
+    "start": "react-app-rewired start --scripts-version react-scripts-ts",
+    "build": "react-app-rewired build --scripts-version react-scripts-ts",
+    "test": "react-app-rewired test --scripts-version react-scripts-ts --env=jsdom",
+    "eject": "react-scripts eject",
+    "proxy": "node ./api-server.js",
+    "startServers": "concurrently --kill-others \"npm run proxy\" \"npm run start\""
+  },
+```
+
+
+`npm install react-app-rewired --save-dev`
+
+Replace loader
+- ts-loader with at-loader 
+
+Add loader
+- scss loader.
+
+
+
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
@@ -285,6 +313,26 @@ Then add the block below to your `launch.json` file and put it inside the `.vsco
   }]
 }
 ```
+
+### Adding support for scss:
+`npm install sass-loader node-sass --save-dev`
+
+```js
+module.exports = function override(config, env) {
+  config.module.rules[1].oneOf[3].test = /\.scss$/;
+  config.module.rules[1].oneOf[3].use.push({
+    loader: 'sass-loader'
+  })
+
+  //do stuff with the webpack config...
+  return config;
+}```
+
+
+### replacing ts-loader with the awesome-typescript-loader:
+
+`npm install awesome-typescript-loader --save-dev`
+
 >Note: the URL may be different if you've made adjustments via the [HOST or PORT environment variables](#advanced-configuration).
 
 Start your app by running `npm start`, and start debugging in VS Code by pressing `F5` or by clicking the green debug icon. You can now write code, set breakpoints, make changes to the code, and debug your newly modified code—all from your editor.
