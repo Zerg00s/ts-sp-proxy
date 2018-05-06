@@ -1,0 +1,29 @@
+{
+  "name": "sharepoint-react-webpart",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-scripts-ts": "2.15.1"
+  },
+  "scripts": {
+    "start": "react-app-rewired start --scripts-version react-scripts-ts",
+    "build": "react-app-rewired build --scripts-version react-scripts-ts",
+    "test": "react-app-rewired test --scripts-version react-scripts-ts --env=jsdom",
+    "eject": "react-scripts eject",
+    "proxy": "node ./api-server.js",
+    "startServers": "concurrently --kill-others \"npm run proxy\" \"npm run start\""
+  },
+  "devDependencies": {
+    "@types/jest": "^22.2.3",
+    "@types/node": "^10.0.4",
+    "@types/react": "^16.3.13",
+    "@types/react-dom": "^16.0.5",
+    "concurrently": "^3.5.1",
+    "react-app-rewired": "^1.5.2",
+    "sp-rest-proxy": "^2.5.10",
+    "typescript": "^2.8.3"
+  },
+  "proxy": "http://localhost:8081"
+}
