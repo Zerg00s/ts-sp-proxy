@@ -3,6 +3,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 [Based on Andrew's article](https://www.linkedin.com/pulse/getting-started-react-local-development-sharepoint-andrew-koltyakov/)
 
+### How to start:
+`npm run proxy` to supply SharePoint site credentials
+`npm run startServers`
+
+### History:
 `create-react-app --scripts-version=react-scripts-ts sharepoint-react-webpart && cd sharepoint-react-webpart`
 
 
