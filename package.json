@@ -4,11 +4,13 @@
   "private": true,
   "dependencies": {
     "@types/react-router": "^4.0.24",
+    "@types/toastr": "^2.1.35",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
-    "react-scripts-ts": "2.15.1"
+    "react-scripts-ts": "2.15.1",
+    "toastr": "^2.1.4"
   },
   "scripts": {
     "start": "react-app-rewired start --scripts-version react-scripts-ts",

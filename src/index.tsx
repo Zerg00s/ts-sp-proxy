@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { HashRouter, Route, Switch } from 'react-router-dom'
+import '../node_modules/toastr/toastr.scss';
 import About from './About';
 import App from './App';
 import './index.scss';
