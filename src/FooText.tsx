@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { AppContext } from './App';
 
 export interface IFooTextProps {
     name?: string;
@@ -10,7 +11,15 @@ export default class FooText extends React.Component<IFooTextProps, any> {
     public render() {
         return (
             <div>
-                <input type="text" onChange={this.handleChange} />
+                <AppContext.Consumer >
+                    {contextValue => (
+                        <React.Fragment>
+                            <input type="text" onChange={this.handleChange} defaultValue={(contextValue as any).value} />
+                        </React.Fragment>
+                    )
+
+                    }
+                </AppContext.Consumer>
             </div>
         );
     }
